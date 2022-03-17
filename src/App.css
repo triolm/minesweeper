@@ -2,10 +2,24 @@
   text-align: center;
 }
 
+
+button{
+  border: 2px solid gray;
+}
+
+.grid{
+  margin-left: auto;
+}
+
 .square{
   background-color: rgb(230, 205, 137);
   width: 30px;
   height: 30px;
+}
+
+.flagged{
+  background-color: white;
+
 }
 
 .unrevealed {
