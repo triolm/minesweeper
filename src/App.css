@@ -1,20 +1,57 @@
+:root{
+  --border: #6E5E64;
+  --box-size: 100px;
+}
+
 .App {
   text-align: center;
 }
 
+p, h1{
+  width: 100%;
+}
+
+h1{
+	line-height: 20px;
+}
+
+header{
+	margin-top:40px;
+	margin-bottom:20px;
+}
 
 button{
-  border: 2px solid gray;
+  border:none;
+  border-left: .2em solid var(--border);
+  border-top: .2em solid var(--border);
+  line-height: 0;
+}
+button:last-child{
+  border-right: .2em solid var(--border);
+}
+.row:last-child button{
+  border-bottom: .2em solid var(--border);
 }
 
 .grid{
-  margin-left: auto;
+  width:var(--box-size);
+  height: var(--box-size);
+  display: inline-block;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .square{
-  background-color: rgb(230, 205, 137);
-  width: 30px;
-  height: 30px;
+  background-color: #EECC96;
+  width: 100%;
 }
 
 .flagged{
@@ -23,50 +60,38 @@ button{
 }
 
 .unrevealed {
-  background-color: rgb(133, 196, 124);
+  background-color: #b5d19a;
 }
 
 .mine {
-  background-color: rgb(196, 124, 124);
+  background-color: #cc5b5f;
 }
 
-.row{
-  width: 100;
-  display: flex;
-  flex-direction: row;
+
+@media (min-width: 200px) {
+  :root{
+  --border: #6E5E64;
+  --box-size: 200px;
+	}
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (min-width: 300px) {
+  :root{
+  --border: #6E5E64;
+  --box-size: 300px;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (min-width: 400px) {
+  :root{
+  --border: #6E5E64;
+  --box-size: 400px;
+	}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (min-width: 600px) {
+  :root{
+  --border: #6E5E64;
+  --box-size: 600px;
+	}
 }
