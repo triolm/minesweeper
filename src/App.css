@@ -1,6 +1,12 @@
 :root{
-  --border: #6E5E64;
+  /* --border: #6d796d; */
   --box-size: 100px;
+  --revealed-bg: #e2c088;
+  --revealed-bg-1: #EECC96;
+  --unrevealed-bg: #a7c58c;
+  --unrevealed-bg-1: #b5d19a;
+  --mine-bg-1:#cc5b5f;
+  --mine-bg:#bd4c50;
 }
 
 .App {
@@ -20,17 +26,38 @@ header{
 	margin-bottom:20px;
 }
 
-button{
-  border:none;
-  border-left: .2em solid var(--border);
-  border-top: .2em solid var(--border);
-  line-height: 0;
+body{
+  background-color: lightgray;
 }
-button:last-child{
-  border-right: .2em solid var(--border);
+
+.controls{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: var(--box-size);
+  margin: auto;
+  padding-bottom: 10px;
 }
-.row:last-child button{
-  border-bottom: .2em solid var(--border);
+
+.controls button{
+  padding-top:5px;
+  width: 35px;
+  height: 35px;
+  border: 2px solid darkgray;
+}
+.controls button:hover{
+  background-color: lightgray;
+}
+
+.controls select{
+  border: 2px solid darkgray;
+}
+.controls select:focus{
+  border: 2px solid darkgray!important;
+}
+
+.controls select option:active{
+  color: red;
 }
 
 .grid{
@@ -49,49 +76,27 @@ button:last-child{
   flex-direction: row;
 }
 
-.square{
-  background-color: #EECC96;
-  width: 100%;
-}
-
-.flagged{
-  background-color: white;
-
-}
-
-.unrevealed {
-  background-color: #b5d19a;
-}
-
-.mine {
-  background-color: #cc5b5f;
-}
-
 
 @media (min-width: 200px) {
   :root{
-  --border: #6E5E64;
   --box-size: 200px;
 	}
 }
 
 @media (min-width: 300px) {
   :root{
-  --border: #6E5E64;
   --box-size: 300px;
 	}
 }
 
 @media (min-width: 400px) {
   :root{
-  --border: #6E5E64;
   --box-size: 400px;
 	}
 }
 
 @media (min-width: 600px) {
   :root{
-  --border: #6E5E64;
   --box-size: 600px;
 	}
 }

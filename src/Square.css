@@ -1,0 +1,75 @@
+.m-square{
+  border:none;
+  border-left: .15rem solid var(--border);
+  border-top: .15rem solid var(--border);
+  line-height: 0;
+  overflow:hidden; 
+
+}
+.m-square:last-child{
+  border-right: .15rem solid var(--border);
+}
+.row:last-child button{
+  border-bottom: .15rem solid var(--border);
+}
+
+
+.m-square{
+  background-color: var(--revealed-bg);
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.unrevealed{
+  background-color: var(--unrevealed-bg);
+}
+.mine {
+  background-color: var(--mine-bg);
+}
+
+button.flagged{
+  background-color: none!important;
+  background-image: url(./flag.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+.row:nth-of-type(2n) button:nth-of-type(2n){
+  background-color: var(--revealed-bg-1);
+}
+.row:nth-of-type(2n +1) button:nth-of-type(2n +1){
+  background-color: var(--revealed-bg-1);
+}
+
+.row:nth-of-type(2n) button:nth-of-type(2n).unrevealed{
+  background-color: var(--unrevealed-bg-1);
+}
+.row:nth-of-type(2n +1) button:nth-of-type(2n +1).unrevealed{
+  background-color: var(--unrevealed-bg-1);
+}
+
+.row:nth-of-type(2n) button:nth-of-type(2n).mine{
+  background-color: var(--mine-bg-1);
+}
+.row:nth-of-type(2n +1) button:nth-of-type(2n +1).mine{
+  background-color: var(--mine-bg-1);
+}
+
+.adj1{
+  color:rgb(94, 94, 209);
+}
+.adj2{
+  color:rgb(66, 128, 71);
+}
+.adj3{
+  color:rgb(150, 84, 40);
+}
+.adj4{
+  color:rgb(138, 56, 56);
+}
+.adj5{
+  color:rgb(81, 56, 138);
+}
