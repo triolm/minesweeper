@@ -4,7 +4,7 @@ import './Square.css';
 
 const Square = ({ val, revealed, coords, revealTile, revealAll, inGame }) => {
     const [flagged, setFlagged] = useState(false);
-    if (inGame == 0 && flagged) {
+    if (inGame === 0 && flagged) {
         setFlagged(false);
     }
     if (revealed && val === -1) {
@@ -23,7 +23,7 @@ const Square = ({ val, revealed, coords, revealTile, revealAll, inGame }) => {
         )
     }
     return (
-        <button className={"adj" + val + " m-square"} >{val == 0 ? "" : val}</button>
+        <button className={"adj" + val + " m-square"} >{val === 0 ? "" : val}</button>
     )
 
 }

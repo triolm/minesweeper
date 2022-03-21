@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Square from './Square.js'
 
 const Row = ({ values, mask, row, revealTile, revealAll, inGame }) => {

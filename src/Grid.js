@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Row from './Row.js'
+import Dialogue from './Dialogue.js'
 
 const Grid = () => {
     let [size, setSize] = useState(18);
@@ -31,6 +32,7 @@ const Grid = () => {
         }
         if (grid[x][y] === -1 && inGame === 1) {
             revealAll();
+            return;
         }
         else if (grid[x][y] === 0) {
             for (let nx = x - 1; nx < x + 2; nx++) {
@@ -42,6 +44,10 @@ const Grid = () => {
                     }
                 }
             }
+        }
+        if (checkWin(grid, gridMask)) {
+            setInGame(2);
+            console.log("hi")
         }
     }
 
@@ -62,8 +68,20 @@ const Grid = () => {
             <div className='grid'>
                 {grid.map((rowVals, i) => <Row revealTile={revealTile} inGame={inGame} revealAll={revealAll} values={rowVals} mask={gridMask[i]} row={i} key={i} />)}
             </div>
+            {inGame === 2 || inGame === -1 ? <Dialogue status={inGame} reset={() => reset(size)} /> : ""}
         </>
     )
+}
+
+const checkWin = (grid, gridMask) => {
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid.length; j++) {
+            if (!gridMask[i][j] && grid[i][j] !== -1) {
+                return false
+            }
+        }
+    }
+    return true;
 }
 
 const emptyGrid = (size, val) => {
@@ -91,7 +109,7 @@ const trueGrid = (grid, gridMask) => {
 const generateGrid = (size, x, y) => {
     let newGrid = emptyGrid(size, 0);
 
-    for (let i = 0; i < (size * size) / 5; i++) {
+    for (let i = 0; i < (size * size) / 7; i++) {
         let coords;
         do {
             coords = [Math.floor(Math.random() * size), Math.floor(Math.random() * size)]
